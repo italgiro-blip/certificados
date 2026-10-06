@@ -1,0 +1,171 @@
+================================================================================
+                              PROYECTOS
+                     José Luis Girotto Silveira
+================================================================================
+
+
+================================================================================
+Sistema de Registro y Análisis Estadístico
+Ministerio del Interior — Proyecto institucional
+Estado: MVP funcional | En desarrollo activo
+================================================================================
+
+Descripción:
+Aplicación web multi-usuario para el registro, consulta y análisis
+estadístico de datos institucionales con componente geoespacial.
+Diseñada para uso interno, con control de roles, auditoría de cambios
+y soporte para análisis territorial.
+
+El sistema se encuentra en estado funcional y operativo en entorno
+local, con arquitectura preparada para su despliegue en servidor
+institucional.
+
+Componentes implementados:
+
+  - Base de datos relacional con extensión geoespacial.
+  - Backend con API REST y autenticación por tokens.
+  - Auditoría automática de todos los cambios (bitácora).
+  - Frontend con login, dashboard, filtros y carga de datos.
+  - Control de acceso por roles (administración, operación, consulta).
+
+Rol:
+Desarrollo completo del sistema: diseño de base de datos, backend,
+frontend, seguridad y roadmap de implementación.
+
+Stack tecnológico:
+
+  Base de datos     Relacional con extensión geoespacial
+  Backend           Node.js + Express
+  Autenticación     JWT + bcrypt
+  Frontend          HTML5 + CSS3 + JavaScript
+  Infraestructura   Servidor institucional (en preparación)
+
+Estado:
+MVP funcional. En desarrollo activo con roadmap definido hacia
+producción institucional. El sistema se encuentra operativo en
+entorno local.
+
+Consideraciones:
+El sistema maneja datos sensibles. Se coordina con el área legal para
+cumplimiento normativo de protección de datos.
+
+
+--------------------------------------------------------------------------------
+ESQUEMA DE ARQUITECTURA
+--------------------------------------------------------------------------------
+
+  ┌─────────────────────────────────────────────────────────┐
+  │                    USUARIOS                             │
+  │  Administración · Operación · Consulta                  │
+  └────────────────────────┬────────────────────────────────┘
+                           │ HTTPS
+                           ▼
+  ┌─────────────────────────────────────────────────────────┐
+  │                  FRONTEND (web)                         │
+  │  · Login con credenciales                               │
+  │  · Dashboard con filtros                                │
+  │  · Formularios de carga de datos                        │
+  │  · Visualización de registros                           │
+  └────────────────────────┬────────────────────────────────┘
+                           │ API REST
+                           ▼
+  ┌─────────────────────────────────────────────────────────┐
+  │                  BACKEND (API)                          │
+  │  · Autenticación por tokens                             │
+  │  · Control de acceso por roles                          │
+  │  · CRUD de eventos y personas                           │
+  │  · Auditoría automática de cambios                      │
+  └────────────────────────┬────────────────────────────────┘
+                           │
+                           ▼
+  ┌─────────────────────────────────────────────────────────┐
+  │              BASE DE DATOS CENTRALIZADA                 │
+  │  · Catálogos maestros                                   │
+  │  · Tablas transaccionales                               │
+  │  · Extensión geoespacial                                │
+  │  · Bitácora de auditoría                                │
+  └────────────────────────┬────────────────────────────────┘
+                           │
+          ┌────────────────┼────────────────┐
+          ▼                ▼                ▼
+  ┌────────────┐   ┌────────────┐   ┌────────────┐
+  │ ESTADÍS-   │   │   MAPA     │   │ EXPORTA-   │
+  │ TICAS      │   │ GEOESPACIAL│   │ CIÓN       │
+  │ (pendiente)│   │ (pendiente)│   │ (pendiente)│
+  └────────────┘   └────────────┘   └────────────┘
+
+
+--------------------------------------------------------------------------------
+ESQUEMA DE SEGURIDAD Y GOBERNANZA
+--------------------------------------------------------------------------------
+
+  AUTENTICACIÓN
+  · Login con credenciales
+  · Tokens de sesión con expiración
+  · Contraseñas hasheadas (bcrypt)
+
+  CONTROL DE ACCESO POR ROLES
+  · Administración → acceso total
+  · Operación     → crear y editar
+  · Consulta      → solo lectura
+
+  AUDITORÍA
+  · Registro automático de cada cambio
+  · Usuario, fecha, acción y detalle
+  · Trazabilidad completa
+
+  PROTECCIÓN DE DATOS
+  · Cumplimiento normativo de protección de datos
+  · Coordinación con área legal
+  · Política de retención de datos
+
+
+--------------------------------------------------------------------------------
+ESQUEMA DE MÓDULOS
+--------------------------------------------------------------------------------
+
+  Estado: MVP funcional
+
+  ┌─────────────────────────────────────────────┐
+  │  BASE DE DATOS              [████████░░] 95%│
+  │  BACKEND — AUTENTICACIÓN    [██████████]100%│
+  │  BACKEND — CRUD EVENTOS     [██████████]100%│
+  │  BACKEND — AUDITORÍA        [██████████]100%│
+  │  FRONTEND — LOGIN           [██████████]100%│
+  │  FRONTEND — DASHBOARD       [██████████]100%│
+  │  FRONTEND — FORM. BÁSICO    [████████░░] 80%│
+  │  FRONTEND — FORM. COMPLETO  [███░░░░░░░] 30%│
+  │  PERSONAS                   [░░░░░░░░░░]  0%│
+  │  ESTADÍSTICAS               [░░░░░░░░░░]  0%│
+  │  MAPA GEOESPACIAL           [░░░░░░░░░░]  0%│
+  │  PREPARACIÓN PRODUCCIÓN     [░░░░░░░░░░]  0%│
+  └─────────────────────────────────────────────┘
+
+
+--------------------------------------------------------------------------------
+ESQUEMA DE DESPLIEGUE INSTITUCIONAL
+--------------------------------------------------------------------------------
+
+  ┌─────────────────────────────────────────────┐
+  │           SERVIDOR INSTITUCIONAL            │
+  │                                             │
+  │  ┌─────────────┐      ┌─────────────┐       │
+  │  │   NGINX     │─────▶│   NODE.JS   │       │
+  │  │ (proxy+SSL) │      │  (backend)  │       │
+  │  └─────────────┘      └──────┬──────┘       │
+  │                              │              │
+  │                              ▼              │
+  │                       ┌─────────────┐       │
+  │                       │ POSTGRESQL  │       │
+  │                       │  + POSTGIS  │       │
+  │                       └─────────────┘       │
+  │                                             │
+  │  ┌──────────────────────────────────────┐   │
+  │  │  Respaldos diarios · Monitoreo · Logs│   │
+  │  └──────────────────────────────────────┘   │
+  └─────────────────────────────────────────────┘
+
+
+================================================================================
+                              FIN DEL DOCUMENTO
+================================================================================
