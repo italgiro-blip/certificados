@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio — José Luis Girotto Silveira</title>
+    <style>
+        body { 
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+            background-color: #f7f7f7; 
+            color: #1a1a1a; 
+            padding: 40px 20px; 
+            line-height: 1.6; 
+            margin: 0;
+        }
+        .container { 
+            max-width: 820px; 
+            margin: 0 auto; 
+            background: #fff; 
+            padding: 45px; 
+            border-top: 6px solid #1a3a5c;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
+        }
+        h1 { 
+            color: #1a1a1a; 
+            font-size: 22px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-bottom: 2px solid #eaeaea; 
+            padding-bottom: 12px; 
+            margin-bottom: 10px; 
+        }
+        .subtitulo {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 25px;
+        }
+        .descripcion {
+            font-size: 13.5px;
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+        h2.section-title { 
+            color: #1a3a5c; 
+            font-size: 16px; 
+            border-left: 4px solid #1a3a5c; 
+            padding-left: 10px; 
+            margin-top: 40px; 
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .card { 
+            margin-bottom: 20px; 
+            padding: 18px; 
+            border: 1px solid #e0e0e0; 
+            border-radius: 4px; 
+            background-color: #ffffff; 
+        }
+        .card-title { 
+            color: #1a1a1a; 
+            margin: 0 0 6px 0; 
+            font-size: 15px; 
+            font-weight: bold; 
+        }
+        .card-meta {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        .btn { 
+            display: inline-block; 
+            padding: 7px 15px; 
+            background-color: #1a3a5c; 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 3px; 
+            font-weight: bold; 
+            font-size: 12px; 
+            margin-top: 8px; 
+            margin-right: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .btn:hover { 
+            background-color: #0f2740; 
+        }
+        ul { margin: 6px 0 0 18px; padding: 0; font-size: 13.5px; }
+        li { margin-bottom: 4px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>José Luis Girotto Silveira</h1>
+        <div class="subtitulo">Analista GIS | Especialista en SIG y Analítica de Datos Geoespaciales</div>
+
+        <p class="descripcion">
+            Portafolio profesional de <strong>José Luis Girotto Silveira</strong>, Analista GIS en el 
+            Ministerio del Interior (AECA). Incluye certificaciones académicas, formación complementaria 
+            en analítica de datos, sistemas de información geográfica, teledetección y análisis criminal, 
+            así como proyectos de desarrollo e integración de infraestructura de datos en el sector público.
+        </p>
+
+        <!-- ============================================ -->
+        <!-- PROYECTOS -->
+        <!-- ============================================ -->
+        <h2 class="section-title">Proyectos</h2>
+
+        <div class="card">
+            <h3 class="card-title">Infraestructura de Inteligencia Geoespacial</h3>
+            <div class="card-meta">Ministerio del Interior — Proyecto institucional | En desarrollo</div>
+            <ul>
+                <li>Diseño e implementación de arquitectura centralizada de datos geoespaciales basada en PostGIS, R y QGIS.</li>
+                <li>Gobernanza de datos, interoperabilidad mediante estándares OGC (WMS/WFS) y automatización de flujos.</li>
+                <li>Migración de infraestructura local a servidor Linux centralizado, con orquestación de modelos analíticos.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3 class="card-title">Aplicación web de gestión de datos</h3>
+            <div class="card-meta">Ministerio del Interior — Desarrollo e integración | En desarrollo</div>
+            <ul>
+                <li>Desarrollo de aplicación web con HTML, JavaScript, CSS y PostgreSQL para la gestión y consulta de datos institucionales.</li>
+                <li>Integración de la herramienta en los flujos de trabajo del organismo.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3 class="card-title">WebGIS — Visualizador GeoJSON</h3>
+            <div class="card-meta">Proyecto personal | 2026</div>
+            <ul>
+                <li>Plataforma WebGIS desarrollada con HTML5, CSS3, JavaScript y Leaflet.js para visualización de capas vectoriales.</li>
+            </ul>
+            <a href="https://italgiro-blip.github.io/Kantone/" target="_blank" class="btn">Ver proyecto</a>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- CERTIFICACIONES -->
+        <!-- ============================================ -->
+        <h2 class="section-title">Certificaciones y Antecedentes</h2>
+
+        <div class="card">
+            <h3 class="card-title">Formación Académica</h3>
+            <div class="card-meta">Udelar — Facultad de Ingeniería y Facultad de Ciencias</div>
+            <ul>
+                <li>Especialización en Sistemas de Información Geográficos Empresariales — INCO-FING (2025, Excelente)</li>
+                <li>Tecnólogo en Cartografía — FING (en curso)</li>
+                <li>Licenciatura en Geografía — FCIEN (en curso)</li>
+            </ul>
+            <a href="certificaciones.html" class="btn">Ver certificaciones</a>
+        </div>
+
+        <div class="card">
+            <h3 class="card-title">Formación Complementaria</h3>
+            <div class="card-meta">Cursos internacionales en datos, SIG e IA</div>
+            <ul>
+                <li>Fundamentos del Análisis Criminal — BID (2025)</li>
+                <li>Geointeligencia Computacional — CentroGeo/CONACYT (2024, 2021)</li>
+                <li>Uso y representación de información — CentroGeo (2024)</li>
+                <li>Teledetección con cloud — CONAE (2024)</li>
+            </ul>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- CONTACTO -->
+        <!-- ============================================ -->
+        <h2 class="section-title">Contacto</h2>
+        <div class="card">
+            <div>📧 italgiro@gmail.com</div>
+            <div>📞 (+598) 91400752</div>
+            <div>📍 Montevideo, Uruguay</div>
+            <div>🌐 github.com/italgiro-blip</div>
+        </div>
+
+    </div>
+
+</body>
+</html>
