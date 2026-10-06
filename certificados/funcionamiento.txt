@@ -1,0 +1,78 @@
+ESQUEMA DE PROGRAMACIÓN
+Infraestructura de Inteligencia Geoespacial
+
+  ┌──────────────────────────────────────────────────┐
+  │              FUENTES DE DATOS                    │
+  │  Capas geoespaciales · Datos institucionales     │
+  └──────────────────────────────────────────────────┘
+                        │
+                        ▼
+  ┌──────────────────────────────────────────────────┐
+  │         ALMACENAMIENTO CENTRALIZADO              │
+  │  Base de datos espacial con extensión PostGIS    │
+  │  · Fuente única de verdad                        │
+  │  · Gobernanza: usuarios, permisos, trazabilidad  │
+  └──────────────────────────────────────────────────┘
+                        │
+        ┌───────────────┼───────────────┐
+        ▼               ▼               ▼
+  ┌───────────┐   ┌───────────┐   ┌───────────┐
+  │ ADMINIS-  │   │ ANÁLISIS  │   │    SIG    │
+  │ TRACIÓN   │   │  R + SQL  │   │   QGIS    │
+  │ pgAdmin   │   │ Modelos   │   │ Edición   │
+  │ Usuarios  │   │ espaciales│   │ Mapas     │
+  │ Permisos  │   │           │   │           │
+  │ Respaldos │   │           │   │           │
+  └───────────┘   └───────────┘   └───────────┘
+        │               │               │
+        └───────────────┼───────────────┘
+                        ▼
+  ┌──────────────────────────────────────────────────┐
+  │              AUTOMATIZACIÓN                      │
+  │  Tareas programadas · Orquestación de flujos    │
+  └──────────────────────────────────────────────────┘
+                        │
+                        ▼
+  ┌──────────────────────────────────────────────────┐
+  │              INTEROPERABILIDAD                   │
+  │  Servicios web estándar (WMS/WFS)                │
+  │  Consumo por otros sistemas del organismo        │
+  └──────────────────────────────────────────────────┘
+
+
+CAPA 1 — ALMACENAMIENTO
+  · Base de datos relacional con extensión espacial
+  · Esquemas: datos crudos / datos procesados / resultados
+  · Fuente única de verdad
+
+CAPA 2 — ADMINISTRACIÓN Y GOBERNANZA
+  · Cliente de administración de base de datos (pgAdmin)
+  · Gestión de usuarios, roles y permisos de acceso
+  · Auditoría y trazabilidad de operaciones
+  · Respaldos y restauración
+
+CAPA 3 — LÓGICA DE ANÁLISIS
+  · Lenguaje estadístico (R) para modelos espaciales
+  · Lenguaje de programación (Python) para automatización
+  · Consultas SQL directas para procesamiento pesado
+  · Conexión directa a la base (sin exportaciones intermedias)
+
+CAPA 4 — VISUALIZACIÓN Y EDICIÓN
+  · Sistema de información geográfica (QGIS)
+  · Conexión directa a la base de datos
+  · Publicación de capas como servicios web estándar
+
+CAPA 5 — INTEROPERABILIDAD
+  · Servicios web geoespaciales (WMS/WFS)
+  · Formatos abiertos (GeoJSON, GeoPackage)
+  · API para consumo por otros sistemas del organismo
+
+CAPA 6 — AUTOMATIZACIÓN
+  · Tareas programadas (cron / scheduler)
+  · Orquestación de flujos de trabajo
+  · Actualización automática de capas de resultados
+
+CAPA 7 — INFRAESTRUCTURA
+  · Servidor Linux centralizado
+  · Migración desde entorno local (en curso)
+  · Respaldos y monitoreo
