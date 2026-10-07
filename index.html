@@ -69,15 +69,45 @@
             margin-bottom: 10px;
             font-weight: 500;
         }
+        ul { margin: 6px 0 0 18px; padding: 0; font-size: 13.5px; }
+        li { margin-bottom: 4px; }
 
-                .volver {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 24px;
-            border-top: 1px solid #eaeaea;
+        /* BOTÓN GRANDE (Ver proyecto / Volver al CV) */
+        .btn {
+            display: inline-block;
+            padding: 10px 22px;
+            background-color: #1a3a5c;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background 0.2s;
+            margin-top: 8px;
+        }
+        .btn:hover {
+            background-color: #0f2740;
         }
 
-                .cierre {
+        /* BOTÓN MINI (Ver PDF) */
+        .btn-mini {
+            display: inline-block;
+            padding: 3px 9px;
+            background-color: #1a3a5c;
+            color: white;
+            text-decoration: none;
+            border-radius: 3px;
+            font-size: 11px;
+            margin-left: 6px;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+        .btn-mini:hover {
+            background-color: #0f2740;
+        }
+
+        /* BLOQUE DE CIERRE */
+        .cierre {
             margin-top: 50px;
             padding-top: 30px;
             border-top: 1px solid #eaeaea;
@@ -99,35 +129,28 @@
             color: #777;
             font-style: italic;
         }
-        .btn {
-            display: inline-block;
-            padding: 10px 22px;
-            background-color: #1a3a5c;
-            color: #fff;
+
+
+                .cierre-datos {
+            font-size: 13px;
+            color: #555;
+            margin-top: 4px;
+        }
+        .cierre-datos a {
+            color: #1a3a5c;
             text-decoration: none;
-            border-radius: 4px;
-            font-size: 14px;
-            font-weight: 500;
-            transition: background 0.2s;
         }
-        .btn:hover {
-            background-color: #0f2740;
+        .cierre-datos a:hover {
+            text-decoration: underline;
         }
-       .btn-mini {
-    display: inline-block;
-    padding: 4px 10px;
-    background-color: #1a3a5c;
-    color: white;
-    text-decoration: none;
-    border-radius: 3px;
-    font-size: 11px;
-    margin-left: 8px;
-}
-.btn-mini:hover {
-    background-color: #0f2740;
-}
-        ul { margin: 6px 0 0 18px; padding: 0; font-size: 13.5px; }
-        li { margin-bottom: 4px; }
+
+        /* BOTÓN VOLVER AL CV */
+        .volver {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 1px solid #eaeaea;
+        }
     </style>
 </head>
 <body>
@@ -174,13 +197,7 @@
             <div class="card-meta">Proyecto personal | 2026</div>
             <ul>
                 <li>Plataforma WebGIS desarrollada con HTML5, CSS3, JavaScript y Leaflet.js para visualización de capas vectoriales.</li>
-                 <li>Los datos visualizados en esta aplicación son de carácter hipotético
-y se utilizan exclusivamente con fines de demostración y prueba de
-funcionamiento del sistema.
-
-No corresponden a información real ni oficial de ninguna institución.
-Su único propósito es validar la funcionalidad técnica de la
-herramienta.</li>
+                <li>Los datos visualizados en esta aplicación son de carácter hipotético y se utilizan exclusivamente con fines de demostración y prueba de funcionamiento del sistema. No corresponden a información real ni oficial de ninguna institución. Su único propósito es validar la funcionalidad técnica de la herramienta.</li>
             </ul>
             <a href="https://italgiro-blip.github.io/portada_map/" target="_blank" class="btn">Ver proyecto</a>
         </div>
@@ -202,54 +219,60 @@ herramienta.</li>
         </div>
 
         <div class="card">
-    <h3 class="card-title">Formación Complementaria</h3>
-    <div class="card-meta">Cursos internacionales en datos, SIG e IA</div>
-    <ul>
-        <li>
-            Protección de datos personales para representantes de organismos(2026)
-            <a href="./certificados/Certificado_Protección de Datos Personales.pdf" target="_blank" class="btn">Ver PDF</a>
-        </li>
-        <li>
-            Fundamentos del Análisis Criminal — BID (2025)
-            <a href="./certificados/FUNDAMENTOS DEL ANÁLISIS CRIMINAL Y REDUCCIÓN PROACTIVA DEL DELITO (2ª EDICIÓN).pdf" target="_blank" class="btn">Ver PDF</a>
-        </li>
-         
-        <li>
-            Geointeligencia Computacional — CentroGeo/CONACYT (2024, 2021)
-            <a href="./certificados/Introducción a la Geointeligencia Computacional_2024.pdf" target="_blank" class="btn">Ver PDF(2024)</a>
-            <a href="./certificados/Introducción a la Geointeligencia Computacional_2021.pdf" target="_blank" class="btn">Ver PDF(2021)</a>
-        </li>
-        <li>
-            Uso y representación de información — CentroGeo (2024)
-            <a href="./certificados/Introducción al uso y representación de información.pdf" target="_blank" class="btn">Ver PDF</a>
-        </li>
-        <li>
-            Teledetección con cloud — CONAE (2024)
-            <a href="./certificados/Introducción a la Teledetección con herramientas de procesamiento en la nube.pdf" target="_blank" class="btn">Ver PDF</a>
-        </li>
-    </ul>
-</div>
-
-                <!-- CONTACTO -->
-        <h2 class="section-title">Contacto</h2>
-        <div class="card">
-            <div>📧 italgiro@gmail.com</div>
-            <div>📞 (+598) 91400752</div>
-            <div>📍 Montevideo, Uruguay</div>
-            <div>🌐 <a href="https://github.com/italgiro-blip" target="_blank">github.com/italgiro-blip</a></div>
+            <h3 class="card-title">Formación Complementaria</h3>
+            <div class="card-meta">Cursos internacionales en datos, SIG e IA</div>
+            <ul>
+                <li>
+                    Protección de datos personales para representantes de organismos (2026)
+                    <a href="./certificados/Certificado_Protección de Datos Personales.pdf" target="_blank" class="btn-mini">Ver PDF</a>
+                </li>
+                <li>
+                    Fundamentos del Análisis Criminal — BID (2025)
+                    <a href="./certificados/FUNDAMENTOS DEL ANÁLISIS CRIMINAL Y REDUCCIÓN PROACTIVA DEL DELITO (2ª EDICIÓN).pdf" target="_blank" class="btn-mini">Ver PDF</a>
+                </li>
+                <li>
+                    Geointeligencia Computacional — CentroGeo/CONACYT (2024, 2021)
+                    <a href="./certificados/Introducción a la Geointeligencia Computacional_2024.pdf" target="_blank" class="btn-mini">Ver PDF (2024)</a>
+                    <a href="./certificados/Introducción a la Geointeligencia Computacional_2021.pdf" target="_blank" class="btn-mini">Ver PDF (2021)</a>
+                </li>
+                <li>
+                    Uso y representación de información — CentroGeo (2024)
+                    <a href="./certificados/Introducción al uso y representación de información.pdf" target="_blank" class="btn-mini">Ver PDF</a>
+                </li>
+                <li>
+                    Teledetección con cloud — CONAE (2024)
+                    <a href="./certificados/Introducción a la Teledetección con herramientas de procesamiento en la nube.pdf" target="_blank" class="btn-mini">Ver PDF</a>
+                </li>
+            </ul>
         </div>
 
+                <!-- ============================================ -->
+        <!-- CONTACTO -->
+        <!-- ============================================ -->
+        <h2 class="section-title">Contacto</h2>
+        <div class="card">
+            <div class="contacto-linea">📧 <a href="mailto:italgiro@gmail.com">italgiro@gmail.com</a></div>
+            <div class="contacto-linea">📞 (+598) 91400752</div>
+            <div class="contacto-linea">📍 Montevideo, Uruguay</div>
+            <div class="contacto-linea">🌐 <a href="https://github.com/italgiro-blip" target="_blank">github.com/italgiro-blip</a></div>
+        </div>
+
+        <!-- ============================================ -->
         <!-- CIERRE -->
+        <!-- ============================================ -->
         <div class="cierre">
             <p class="cierre-nombre">José Luis Girotto Silveira</p>
             <p class="cierre-cargo">Analista GIS — Ministerio del Interior (AECA)</p>
             <p class="cierre-lugar">Montevideo, [fecha]</p>
         </div>
 
+        <!-- ============================================ -->
         <!-- BOTÓN VOLVER AL CV -->
+        <!-- ============================================ -->
         <div class="volver">
             <a href="https://italgiro-blip.github.io/postulacion-/" class="btn">Volver al CV</a>
         </div>
+
     </div>
 
 </body>
