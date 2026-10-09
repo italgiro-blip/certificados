@@ -260,18 +260,20 @@
         <!-- ============================================ -->
         <!-- CIERRE -->
         <!-- ============================================ -->
-        <div class="cierre">
-            <p class="cierre-nombre">José Luis Girotto Silveira</p>
-            <p class="cierre-cargo">Analista GIS — Ministerio del Interior (AECA)</p>
-            <p class="cierre-lugar">Montevideo, [fecha]</p>
-        </div>
+       <div class="cierre">
+    <p class="cierre-nombre">José Luis Girotto Silveira</p>
+    <p class="cierre-cargo">Analista GIS — Ministerio del Interior (AECA)</p>
+    <p class="cierre-lugar">Montevideo, <span id="fecha"></span></p>
+</div>
 
-        <!-- ============================================ -->
-        <!-- BOTÓN VOLVER AL CV -->
-        <!-- ============================================ -->
-        <div class="volver">
-            <a href="https://italgiro-blip.github.io/postulacionEnap/" class="btn">Volver al CV</a>
-        </div>
+<script>
+    const hoy = new Date();
+    const opciones = { day: 'numeric', month: 'long', year: 'numeric' };
+    document.getElementById('fecha').textContent = 
+        hoy.toLocaleDateString('es-UY', opciones);
+</script>
+
+      
 
     </div>
 
