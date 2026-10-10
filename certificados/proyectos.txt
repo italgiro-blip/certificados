@@ -6,7 +6,7 @@
 
 ================================================================================
 Sistema de Registro y Análisis Estadístico
-Ministerio del Interior — Proyecto institucional
+Proyecto institucional
 Estado: MVP funcional | En desarrollo activo
 ================================================================================
 
